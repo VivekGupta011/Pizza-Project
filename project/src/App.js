@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter as Routing, Routes, Route } from "react-router-dom";
 import "./index.css";
 import { ProductDetail } from "./ProductDetail";
+import {Order} from "./Order";
 import { Product } from "./Product";
 import { Products } from "./Products";
 import { Home } from "./Home";
@@ -38,6 +39,7 @@ function App() {
         <Route path="Product/:id" element={<Product />} />
         <Route path="Products" element={<Products />} />
         <Route path="Home" element={<Home />} />
+        <Route path="Order" element={<Order />} />
         <Route path="ProductDetail" element={<ProductDetail />} />
         <Route path="ProductCollection" element={<ProductCollection />} />
         <Route path="*" element={<Home />} />

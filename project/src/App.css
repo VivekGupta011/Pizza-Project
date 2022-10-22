@@ -1,3 +1,9 @@
+body{
+  position: relative;
+}
+.Custom-responsive {
+  margin-bottom: 4rem;
+}
 .App {
   text-align: center;
 }
@@ -46,7 +52,22 @@
   width: 100%;
   display: flex;
   justify-content: center;
+
 }
+div#root {
+  min-height: 100vh;
+}
+
+
+.custom-bottom{
+  position: absolute;
+  bottom: 0;
+}
+/* .Custom-Footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+} */
 .container.custom-container {
   margin-bottom: 45vh;
 }
@@ -58,7 +79,10 @@ p.custom-paragraph {
 }
 
 html,body{
-  margin:0px;
+  position: relative;
+  margin: 0;
+  min-height: 100%;
+  font-family: "Helvetica Neue", Arial, sans-serif;
 }
 ul li {
   list-style: none;

@@ -16,6 +16,8 @@ export function Order() {
   const [disabled, setdisabled] = useState(false);
   const [isSubtract, setIsSubtract] = useState(false);
   const [counter, setCounter] = useState(1);
+  const [counter1, setCounter1] = useState(1);
+  const [counter2, setCounter2] = useState(1);
   const incrementCounter = () => {
     setCounter(counter + 1);
   };
@@ -44,7 +46,8 @@ export function Order() {
   }
 
   function orderFunction(){
-    alert("your order success");
+    alert("Thank you,your order has been successfully completed!");
+    navigate("/OrderDelivery");
   }
 
   setTimeout(() => {
@@ -141,7 +144,7 @@ export function Order() {
               <button
                 disabled={disabled}
                 onClick={() => {
-                  counter == 1 ? setdisabled(true) : deleteElement();
+                  counter1 == 1 ? setdisabled(true) : deleteElement();
                 }}
                 className={"btn btn-secondary custom-button"}
               >
@@ -175,7 +178,7 @@ export function Order() {
               <button
                 disabled={disabled}
                 onClick={() => {
-                  counter == 1 ? setdisabled(true) : deleteElement();
+                  counter2 == 1 ? setdisabled(true) : deleteElement();
                 }}
                 className={"btn btn-secondary custom-button"}
               >
@@ -190,7 +193,7 @@ export function Order() {
         </div>
           <button
                 disabled={isAdding}
-                onClick={()=>{navigate("/OrderDelivery")}}
+                onClick={()=>{orderFunction()}}
                 className={"btn btn-dark custom-button"}
               >
               Order Now

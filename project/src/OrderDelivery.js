@@ -45,6 +45,8 @@ export function OrderDelivery() {
       <div>
       <img src={BgImage} className="BgImage" style={{ marginLeft: 5 }} />
       </div>
+
+      <Footer />
     </>
   );
 }

@@ -4,6 +4,7 @@ import logo from '../src/images/logoImg.png';
 import cart1 from '../src/images/cart.png';
 import HeroImg from '../src/images/pizzabg.png'
 import '../src/App.css';
+import {Order} from "./Order";
 import { Products } from "./Products";
 import {Footer} from "./Footer";
 import { useContext } from "react";
@@ -37,7 +38,7 @@ export function Home(){
                 <li className=""><Link to="/Home">Home</Link></li>
                 <li className=""> <Link to="/ProductCollection">Product</Link></li>
                 <li className="cart-part">
-                    <Link to="/">
+                    <Link to="/Order">
                     <div style={{display:'flex'}}>
                     <span style={{position:'relative',bottom:-4}}>{cart.totalItems ? cart.totalItems : 0}</span>
                     <img src={cart1} style={{width:30,marginLeft:5}}/>

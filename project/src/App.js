@@ -9,6 +9,7 @@ import { Products } from "./Products";
 import { Home } from "./Home";
 import { ProductCollection } from "./ProductCollection";
 import {CartContext} from "./CartContext";
+import {OrderDelivery} from "./OrderDelivery";
 import 
 { useEffect,
 useState } from "react";
@@ -41,6 +42,7 @@ function App() {
         <Route path="Home" element={<Home />} />
         <Route path="Order" element={<Order />} />
         <Route path="ProductDetail" element={<ProductDetail />} />
+        <Route path="OrderDelivery" element={<OrderDelivery />} />
         <Route path="ProductCollection" element={<ProductCollection />} />
         <Route path="*" element={<Home />} />
       </Routes>

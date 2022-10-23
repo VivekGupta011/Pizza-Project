@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import { Link,useNavigate, useParams } from "react-router-dom";
 import img from "../src/images/TestingImg.png"
 import { Footer } from "./Footer";
+import {Order} from "./Order";
 export const Product = () => {
 const [product,setProduct]=useState({});
 const navigate=useNavigate();
@@ -29,7 +30,7 @@ useEffect(()=>{
                 <li className=""><Link to="/Home">Home</Link></li>
                 <li className=""> <Link to="/ProductCollection">Product</Link></li>
                 <li className="cart-part">
-                    <Link to="/">
+                    <Link to="/Order">
                     <div style={{display:'flex'}}>
                     <span style={{position:'relative',bottom:-4}}>5</span>
                     <img src={cart} style={{width:30,marginLeft:5}}/>
@@ -62,7 +63,7 @@ useEffect(()=>{
               </p>
               <div className="Pricing d-flex flex-column">
                 <p style={{ fontWeight: 600 }}>₹{product.price}</p>
-                <button className="btn btn-custom ">Add to cart</button>
+                <Link to='/Order'> <button className="btn btn-dark mybtn">Order Now</button></Link>
               </div>
               </div>
             </div>

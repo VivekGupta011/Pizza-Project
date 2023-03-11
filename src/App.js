@@ -20,11 +20,13 @@ function App() {
 
   // fetch cart from local storage
   useEffect(()=>{
+    // localStorage only access data in form of String! for that reason we have use JSON.stringify
     window.localStorage.setItem('cart',JSON.stringify(cart));
 
-  },[cart ]);
+  },[cart]);
   
   useEffect(()=>{
+    // converting string value into object using JSON.parse(cart)
     const cart=window.localStorage.getItem('cart');
     setCart(JSON.parse(cart));
   },[]);

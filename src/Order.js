@@ -86,13 +86,13 @@ export function Order() {
   }
 
   // for deleting each element
-  function handleDelete(ProductId){
-    const _cart={...cart};
-    const quantity=_cart.items[ProductId];
+  function handleDelete(ProductId) {
+    const _cart = { ...cart };
+    const quantity = _cart.items[ProductId];
     delete _cart.items[ProductId];
-    _cart.totalItems-=quantity;
+    _cart.totalItems -= quantity;
     setCart(_cart);
-    const updatedProductsList=products.filter((product)=>product._id!==ProductId);
+    const updatedProductsList = products.filter((product) => product._id !== ProductId);
     setProduct(updatedProductsList);
   }
 
@@ -159,7 +159,7 @@ export function Order() {
   }, 2000);
   return (
     <>
-      <div className="container" style={{ padding: 50 }}>
+      <div className="container" style={{ padding: 50, paddingTop: 15 }}>
         <div className="navbar navbar-expand-lg navbar-light px-3">
           <div className="container">
             <Link to="/Home">
@@ -190,7 +190,7 @@ export function Order() {
         {
           products.map(itemOfProduct => {
             return (
-              <div key={itemOfProduct._id}>
+              <div style={{ padding: "0px 10% 0px" }} key={itemOfProduct._id}>
                 <div className="mt-5">
                   <div className="Order-item container mb-3">
 
@@ -222,12 +222,14 @@ export function Order() {
                       </button>
                     </div>
 
-                    <p className="Pricice-discuss" style={{ fontWeight: 600, marginBottom: 0, marginRight: 70 }}>
-                      ₹{GetPrice(itemOfProduct._id, itemOfProduct.price)}
-                    </p>
+                    <div className="d-flex align-items-center">
+                      <p className="Pricice-discuss" style={{ fontWeight: 600, marginBottom: 0, marginRight: 70 }}>
+                        ₹{GetPrice(itemOfProduct._id, itemOfProduct.price)}
+                      </p>
+                    </div>
 
                     <div className="d-flex align-items-center">
-                      <button onClick={()=>{handleDelete(itemOfProduct._id)}} className={"btn btn-danger custom-button"}>Delete</button>
+                      <button onClick={() => { handleDelete(itemOfProduct._id) }} className={"btn btn-danger custom-button"}>Delete</button>
                     </div>
                   </div>
                   <hr></hr>
@@ -243,7 +245,7 @@ export function Order() {
           <>
             <div className="d-flex flex-column align-items-end">
               <div>
-                <span> <b>Total:</b>₹{TotalSum}</span>
+                <span style={{fontWeight:"bold"}}> <b> Total:₹{TotalSum} </b></span>
               </div>
             </div>
 

@@ -18,18 +18,20 @@ import { Footer } from "./Footer";
 function App() {
   const [cart,setCart]=useState({});
 
-  // fetch cart from local storage
-  useEffect(()=>{
-    // localStorage only access data in form of String! for that reason we have use JSON.stringify
-    window.localStorage.setItem('cart',JSON.stringify(cart));
-
-  },[cart]);
+ 
   
   useEffect(()=>{
     // converting string value into object using JSON.parse(cart)
     const cart=window.localStorage.getItem('cart');
     setCart(JSON.parse(cart));
   },[]);
+
+   // fetch cart from local storage
+   useEffect(()=>{
+    // localStorage only access data in form of String! for that reason we have use JSON.stringify
+    window.localStorage.setItem('cart',JSON.stringify(cart));
+
+  },[cart]);
 
  
   return (
